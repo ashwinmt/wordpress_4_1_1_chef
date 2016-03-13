@@ -1,7 +1,6 @@
-cookbook_file "/srv/www/wordpress/current/wp-config.php" do
-  source "wp-config.php"
+template "/srv/www/wordpress/current/wp-config.php" do
+  source "wp-config.php.erb"
   mode '0755'
-  action :create
   owner 'deploy'
   group 'www-data'
 
