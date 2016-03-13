@@ -7,11 +7,11 @@ cookbook_file "/srv/www/wordpress/current/wp-config.php" do
 
   variables(
     :redishost => (deploy[:wpconfig][:redishost] rescue nil),
-    :wphome   => (deploy[:database][:wphome] rescue nil),
-    :wpsiteurl   => (deploy[:database][:wpsiteurl] rescue nil),
-    :dbname   => (deploy[:database][:dbname] rescue nil),
-    :dbuser       => (deploy[:database][:dbuser] rescue nil),
-    :dbpassword   => (deploy[:database][:dbpassword] rescue nil),
-    :dbhost       => (deploy[:database][:dbhost] rescue nil)
+    :wphome   => (deploy[:wpconfig][:wphome] rescue nil),
+    :wpsiteurl   => (deploy[:wpconfig][:wpsiteurl] rescue nil),
+    :dbname   => (deploy[:wpconfig][:dbname] rescue nil),
+    :dbuser       => (deploy[:wpconfig][:dbuser] rescue nil),
+    :dbpassword   => (deploy[:wpconfig][:dbpassword] rescue nil),
+    :dbhost       => (deploy[:wpconfig][:dbhost] rescue nil)
     )
 end
