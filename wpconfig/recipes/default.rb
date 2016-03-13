@@ -14,10 +14,3 @@ template "/srv/www/wordpress/current/wp-config.php" do
     :dbhost       => (node[:wpconfig][:dbhost] rescue nil)
     )
 end
-
-directory "/srv/www/wordpress/current/wp-content/uploads" do
-  owner "deploy"
-  group "www-data"
-  mode "744"
-  recursive true
-end
