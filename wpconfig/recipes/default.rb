@@ -5,12 +5,12 @@ template "/srv/www/wordpress/current/wp-config.php" do
   group 'www-data'
 
   variables(
-    :redishost => (deploy[:wpconfig][:redishost] rescue nil),
-    :wphome   => (deploy[:wpconfig][:wphome] rescue nil),
-    :wpsiteurl   => (deploy[:wpconfig][:wpsiteurl] rescue nil),
-    :dbname   => (deploy[:wpconfig][:dbname] rescue nil),
-    :dbuser       => (deploy[:wpconfig][:dbuser] rescue nil),
-    :dbpassword   => (deploy[:wpconfig][:dbpassword] rescue nil),
-    :dbhost       => (deploy[:wpconfig][:dbhost] rescue nil)
+    :redishost => (node[:wpconfig][:redishost] rescue nil),
+    :wphome   => (node[:wpconfig][:wphome] rescue nil),
+    :wpsiteurl   => (node[:wpconfig][:wpsiteurl] rescue nil),
+    :dbname   => (node[:wpconfig][:dbname] rescue nil),
+    :dbuser       => (node[:wpconfig][:dbuser] rescue nil),
+    :dbpassword   => (node[:wpconfig][:dbpassword] rescue nil),
+    :dbhost       => (node[:wpconfig][:dbhost] rescue nil)
     )
 end
